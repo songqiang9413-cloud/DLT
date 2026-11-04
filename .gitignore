@@ -1,0 +1,27 @@
+# dependencies
+node_modules/
+bot/node_modules/
+
+# build outputs
+artifacts/
+cache/
+typechain-types/
+
+# secrets
+.env
+.env.*
+!**/.env.example
+
+# local deployment / runtime state
+deployment-localhost.json
+deployment-hardhat.json
+bot/state*.json
+bot/*.lock
+*.log
+
+# internal operations record (contains server/bot details)
+部署信息.md
+
+# OS files
+.DS_Store
+Thumbs.db

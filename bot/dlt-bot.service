@@ -1,0 +1,36 @@
+[Unit]
+Description=DLT hourly lottery bot (bet + draw keeper)
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=300
+StartLimitBurst=5
+
+[Service]
+Type=simple
+User=dltbot
+Group=dltbot
+WorkingDirectory=/opt/dlt-bot
+EnvironmentFile=/opt/dlt-bot/.env
+ExecStart=/usr/bin/node /opt/dlt-bot/bot.js
+Restart=always
+RestartSec=20
+TimeoutStopSec=45
+KillSignal=SIGTERM
+Nice=10
+CPUQuota=10%
+MemoryMax=160M
+TasksMax=32
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/dlt-bot
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=dlt-bot
+
+[Install]
+WantedBy=multi-user.target

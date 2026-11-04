@@ -1,0 +1,13 @@
+{
+  "network": "base",
+  "chainId": "8453",
+  "lottery": "0x88B31E49Fd48108c132Aa0891DBd74caA5199A68",
+  "dlt": "0xe9c553454B48C71537AC9Dddae495D9181E3990f",
+  "admin": "0x6DFb0fA0873fBC4038764f7c902A86ebE1ECe561",
+  "initialTeam": "0x45F3aE8A36A1bC263AC5543d6876Dc37542F1785",
+  "team": "0x45F3aE8A36A1bC263AC5543d6876Dc37542F1785",
+  "teamChangeDelaySeconds": "86400",
+  "deployer": "0x01C237E7dddFca6a29961E2099aaCcB36c22B295",
+  "deployBlock": 53512563,
+  "deployTx": "0x4a8d734ce9ea4d9e4c8a41e1437dad8cf57d8744a49e9e5cb75edcf378aabf2c"
+}

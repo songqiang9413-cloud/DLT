@@ -1,0 +1,18 @@
+{
+  "name": "dlt-lottery-bot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "DLT hourly lottery bot: one bet per hour plus optional draw keeper",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "once": "node bot.js --once",
+    "dry": "node bot.js --once --dry-run"
+  },
+  "dependencies": {
+    "ethers": "6.17.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -2,6 +2,15 @@
 
 ERC20 代币 DLT + 每小时一期的链上彩票 + 国库 ETH 自动做市。
 
+## Live deployment (Base mainnet)
+
+- DLT token: `0xe9c553454B48C71537AC9Dddae495D9181E3990f`
+- Lottery: `0x88B31E49Fd48108c132Aa0891DBd74caA5199A68`
+- Uniswap V2 pair: `0xdE787eDb5A87a0B299154fF6504808367Ed93f59`
+- Admin: `0x6DFb0fA0873fBC4038764f7c902A86ebE1ECe561`
+- Team: `0x45F3aE8A36A1bC263AC5543d6876Dc37542F1785`
+- Source: https://github.com/songqiang9413-cloud/DLT
+
 - **DLT 代币合约：零 owner、零 admin、无暂停、无提币、不可升级。**
 - **彩票合约：零 owner；只有一个不可转让的限权管理员，管理员只能提案修改/撤回团队收款地址，链上公示 24 小时后才生效。**
 - 所有业务参数写死，没有修改赔率、注价、周期、奖池比例的 set 函数。
@@ -16,7 +25,7 @@ ERC20 代币 DLT + 每小时一期的链上彩票 + 国库 ETH 自动做市。
 | `scripts/deploy.js` | 部署。一条命令部署彩票合约（DLT 由它自动创建） |
 | `scripts/createInitialPool.js` | 建初始交易池（可选，但强烈建议） |
 | `scripts/status.js` | 查看系统状态（只读，不花任何钱） |
-| `test/lottery.test.js` | 全套测试（29 个用例，跑在 Base 主网分叉上） |
+| `test/lottery.test.js` | 全套测试（30 个用例，跑在 Base 主网分叉上） |
 
 ---
 
@@ -182,15 +191,31 @@ npx hardhat run scripts/status.js --network base
 
 ---
 
-## 五、在 Basescan 上验证源码（可选，但对建立信任很有用）
+## 五、在 Basescan 上验证源码（OKX 显示“合约未开源”的关键）
+
+OKX Web3 的“合约未开源”读取的是 **Basescan 的源码验证状态**，不是 GitHub 仓库。
+把代码推到 GitHub 不会自动改变 OKX 的标签；必须在 Basescan 完成验证。
+
+本仓库已经准备好可上传的 Standard-JSON：
+
+- `verification/standard-input.json`
+- 详细步骤见 `verification/README.md`
+
+需要验证两个地址：
+
+- DLT 代币：`0xe9c553454B48C71537AC9Dddae495D9181E3990f`
+- 彩票合约：`0x88B31E49Fd48108c132Aa0891DBd74caA5199A68`（构造函数参数：`0x6DFb0fA0873fBC4038764f7c902A86ebE1ECe561`）
+
+也可以用 Hardhat（需要免费 Basescan API Key）：
 
 ```powershell
-$env:BASESCAN_API_KEY="你的key"   # 在 basescan.org 免费注册账号后获取
-npx hardhat verify --network base 彩票合约地址
+$env:BASESCAN_API_KEY="你的key"
+npx hardhat verify --network base 0x88B31E49Fd48108c132Aa0891DBd74caA5199A68 0x6DFb0fA0873fBC4038764f7c902A86ebE1ECe561
+npx hardhat verify --network base 0xe9c553454B48C71537AC9Dddae495D9181E3990f
 ```
 
-> DLT 是彩票合约在构造函数里创建的。彩票合约验证通过后，Basescan 通常会自动把 DLT 也一起验证；
-> 如果没自动验证，DLT 需要单独走“标准 JSON 输入”流程，遇到问题可以找我。
+> DLT 是在彩票合约的构造函数里创建的。常规 Hardhat 验证可能被 Basescan 拒绝，
+> 这时用 `verification/standard-input.json` 走 Standard-JSON 验证。
 
 ---
 
@@ -268,3 +293,8 @@ npx hardhat test
 - 彩票开奖 10
 - 管理员延迟改地址 6
 - DLT 自动做市 2
+---
+
+## 七、License
+
+MIT，见 [LICENSE](LICENSE)。

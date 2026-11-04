@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+
+  <defs>
+    <linearGradient id="popBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00E5FF"/><stop offset="0.34" stop-color="#5B6CFF"/><stop offset="0.68" stop-color="#FF2D95"/><stop offset="1" stop-color="#FF9E00"/></linearGradient>
+    <radialGradient id="popLight" cx="0.22" cy="0.12" r="0.62"><stop offset="0" stop-color="#FFFFFF" stop-opacity="0.42"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient>
+    <radialGradient id="popDark" cx="0.88" cy="0.86" r="0.6"><stop offset="0" stop-color="#1B0033" stop-opacity="0.35"/><stop offset="1" stop-color="#1B0033" stop-opacity="0"/></radialGradient>
+    <linearGradient id="whiteGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E6F8FF"/></linearGradient>
+    <linearGradient id="popSpark" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="0.5" stop-color="#FFE95C"/><stop offset="1" stop-color="#FF9D00"/></linearGradient>
+    <filter id="popShadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#21002F" flood-opacity="0.35"/></filter>
+    <filter id="textShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#21002F" flood-opacity="0.5"/></filter>
+  </defs>
+  <rect width="1024" height="1024" rx="224" fill="url(#popBg)"/>
+  <rect width="1024" height="1024" rx="224" fill="url(#popLight)"/>
+  <rect width="1024" height="1024" rx="224" fill="url(#popDark)"/>
+  <rect x="22" y="22" width="980" height="980" rx="206" fill="none" stroke="#FFFFFF" stroke-opacity="0.42" stroke-width="3"/>
+  <g filter="url(#popShadow)"><path d="M337 286 H525 A226 226 0 0 1 525 738 H337 A64 64 0 0 1 273 674 V350 A64 64 0 0 1 337 286 Z M425 350 H525 A162 162 0 0 1 525 674 H425 Q401 674 401 650 V374 Q401 350 425 350 Z" fill="url(#whiteGrad)" fill-rule="evenodd"/></g>
+  <circle cx="544" cy="512" r="92" fill="#081020" stroke="#FFFFFF" stroke-width="9"/>
+  <g stroke="#7DF9FF" stroke-width="5" stroke-linecap="round" opacity="0.95"><line x1="544" y1="456" x2="540" y2="470"/><line x1="544" y1="554" x2="540" y2="568"/><line x1="616" y1="512" x2="632" y2="512"/><line x1="456" y1="512" x2="472" y2="512"/></g>
+  <line x1="544" y1="512" x2="540" y2="464" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <line x1="544" y1="512" x2="582" y2="545" stroke="#FFE95C" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="544" cy="512" r="13" fill="#FFE95C"/>
+  <g filter="url(#popShadow)"><path d="M800 186 L818 232 L864 250 L818 268 L800 314 L782 268 L736 250 L782 232 Z" fill="url(#popSpark)"/></g>
+  <path d="M902 154 L910 174 L930 182 L910 190 L902 210 L894 190 L874 182 L894 174 Z" fill="#FFFFFF" opacity="0.95"/>
+  <text x="512" y="906" text-anchor="middle" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="96" font-weight="900" letter-spacing="18" fill="#FFFFFF" filter="url(#textShadow)">DLT</text>
+</svg>

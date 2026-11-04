@@ -4,6 +4,23 @@ OKX Web3 的“合约未开源”读取的是 **Base 链浏览器 Basescan 的�
 不是 GitHub 仓库。把代码推到 GitHub 不会自动改变 OKX 的标签；必须在 Basescan
 完成合约验证。
 
+## 当前状态（2026-11-04）
+
+两个合约已经通过 **Sourcify exact_match** 验证（创建字节码和运行字节码都完全匹配）：
+
+- DLT：https://repo.sourcify.dev/contracts/full_match/8453/0xe9c553454B48C71537AC9Dddae495D9181E3990f/
+  - matchId `58397368`
+- Lottery：https://repo.sourcify.dev/contracts/full_match/8453/0x88B31E49Fd48108c132Aa0891DBd74caA5199A68/
+  - matchId `58397366`
+
+Basescan 仍未验证：Sourcify 尝试自动提交 Basescan 时，Etherscan 返回
+“Daily limit of 500 source code submissions reached”；Basescan 的注册/验证页面
+又要求 reCAPTCHA。Sourcify 的 exact_match 已经是独立、可公开审查的验证结果。
+
+如果 OKX 仍然显示“合约未开源”，可以用 OKX 代币详情页的“反馈/纠错”入口，
+附上上面的 Sourcify 链接和 GitHub 仓库：
+https://github.com/songqiang9413-cloud/DLT
+
 ## 合约地址
 
 | 合约 | 地址 |

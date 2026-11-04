@@ -10,6 +10,9 @@ ERC20 代币 DLT + 每小时一期的链上彩票 + 国库 ETH 自动做市。
 - Admin: `0x6DFb0fA0873fBC4038764f7c902A86ebE1ECe561`
 - Team: `0x45F3aE8A36A1bC263AC5543d6876Dc37542F1785`
 - Source: https://github.com/songqiang9413-cloud/DLT
+- Sourcify (exact match):
+  - DLT: https://repo.sourcify.dev/contracts/full_match/8453/0xe9c553454B48C71537AC9Dddae495D9181E3990f/
+  - Lottery: https://repo.sourcify.dev/contracts/full_match/8453/0x88B31E49Fd48108c132Aa0891DBd74caA5199A68/
 
 - **DLT 代币合约：零 owner、零 admin、无暂停、无提币、不可升级。**
 - **彩票合约：零 owner；只有一个不可转让的限权管理员，管理员只能提案修改/撤回团队收款地址，链上公示 24 小时后才生效。**
